@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Farmer Crop Guide</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         WELCOME PAGE
+    ========================== -->
+
+    <div id="welcomePage" class="page active">
+
+        <div class="welcome-overlay">
+
+            <div class="welcome-content">
+
+                <div class="welcome-icon">
+                    🌾
+                </div>
+
+                <p class="small-title">
+                    SMART FARMING ASSISTANT
+                </p>
+
+                <h1>
+                    Farmer Crop Guide
+                </h1>
+
+                <p class="welcome-text">
+                    Find the right crop for your farm
+                    based on season, soil and water.
+                </p>
+
+                <button
+                    class="get-started-btn"
+                    onclick="showLanguagePage()">
+
+                    Get Started →
+                    
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LANGUAGE SELECTION PAGE
+    ========================== -->
+
+    <div id="languagePage" class="page">
+
+        <div class="language-container">
+
+            <div class="language-card">
+
+                <div class="language-icon">
+                    🌱
+                </div>
+
+                <p class="small-title">
+                    FARMER CROP GUIDE
+                </p>
+
+                <h1>
+                    Select Your Language
+                </h1>
+
+                <p class="language-subtitle">
+                    Choose your preferred language
+                    to continue.
+                </p>
+
+
+                <div class="language-options">
+
+                    <button
+                        class="language-option"
+                        onclick="selectLanguage('en')">
+
+                        <span class="language-symbol">
+                            🇬🇧
+                        </span>
+
+                        <span>
+                            English
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="language-option"
+                        onclick="selectLanguage('te')">
+
+                        <span class="language-symbol">
+                            🇮🇳
+                        </span>
+
+                        <span>
+                            తెలుగు
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="language-option"
+                        onclick="selectLanguage('hi')">
+
+                        <span class="language-symbol">
+                            🇮🇳
+                        </span>
+
+                        <span>
+                            हिन्दी
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN FARMER CROP GUIDE
+    ========================== -->
+
+    <div id="mainPage" class="page">
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🌾 <span id="navTitle">
+                    Farmer Crop Guide
+                </span>
+            </div>
+
+
+            <div class="nav-links">
+
+                <a href="index.html"
+                   id="navHome">
+                    Home
+                </a>
+
+                <a href="crop-guide.html"
+                   id="navCropGuide">
+                    Crop Guide
+                </a>
+
+                <a href="soil-guide.html"
+                   id="navSoilGuide">
+                    Soil Guide
+                </a>
+
+                <a href="tips.html"
+                   id="navTips">
+                    Farming Tips
+                </a>
+
+            </div>
+
+
+            <div class="language-mini">
+
+                <select
+                    id="languageSelect"
+                    onchange="changeLanguage(this.value)">
+
+                    <option value="en">
+                        English
+                    </option>
+
+                    <option value="te">
+                        తెలుగు
+                    </option>
+
+                    <option value="hi">
+                        हिन्दी
+                    </option>
+
+                </select>
+
+            </div>
+
+        </nav>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="section-label"
+                   id="heroLabel">
+                    SMART FARMING ASSISTANT
+                </p>
+
+                <h1 id="heroTitle">
+                    Choose the Right Crop
+                    for Your Farm
+                </h1>
+
+                <p id="heroDescription">
+
+                    Get crop recommendations based on
+                    your season, soil type and water
+                    availability.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CROP RECOMMENDATION FORM -->
+
+        <section class="recommendation-section">
+
+            <div class="section-heading">
+
+                <p class="section-label"
+                   id="formLabel">
+                    CROP RECOMMENDATION
+                </p>
+
+                <h2 id="formTitle">
+                    Tell Us About Your Farm
+                </h2>
+
+                <p id="formDescription">
+                    Select the conditions of your farm
+                    to find suitable crops.
+                </p>
+
+            </div>
+
+
+            <div class="form-container">
+
+
+                <!-- SEASON -->
+
+                <div class="form-group">
+
+                    <label for="season"
+                           id="seasonLabel">
+                        Farming Season
+                    </label>
+
+                    <select id="season">
+
+                        <option value="">
+                            Select Season
+                        </option>
+
+                        <option value="kharif">
+                            Kharif
+                        </option>
+
+                        <option value="rabi">
+                            Rabi
+                        </option>
+
+                        <option value="summer">
+                            Summer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SOIL -->
+
+                <div class="form-group">
+
+                    <label for="soilType"
+                           id="soilLabel">
+                        Soil Type
+                    </label>
+
+                    <select id="soilType">
+
+                        <option value="">
+                            Select Soil Type
+                        </option>
+
+                        <option value="black">
+                            Black Soil
+                        </option>
+
+                        <option value="red">
+                            Red Soil
+                        </option>
+
+                        <option value="loamy">
+                            Loamy Soil
+                        </option>
+
+                        <option value="clay">
+                            Clay Soil
+                        </option>
+
+                        <option value="sandy">
+                            Sandy Soil
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- WATER -->
+
+                <div class="form-group">
+
+                    <label for="water"
+                           id="waterLabel">
+                        Water Availability
+                    </label>
+
+                    <select id="water">
+
+                        <option value="">
+                            Select Water Availability
+                        </option>
+
+                        <option value="low">
+                            Low
+                        </option>
+
+                        <option value="medium">
+                            Medium
+                        </option>
+
+                        <option value="high">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="recommend-button"
+                    onclick="findCrops()"
+                    id="recommendButton">
+
+                    🌱 Find Suitable Crops
+
+                </button>
+
+            </div>
+
+
+            <!-- RESULTS -->
+
+            <div id="results"></div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p id="footerText">
+                🌾 Farmer Crop Guide —
+                Smart Farming for Better Decisions
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
