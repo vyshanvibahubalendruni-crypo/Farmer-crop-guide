@@ -4,113 +4,381 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Farming Tips</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .guide-page {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .guide-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .guide-header h1 {
+            color: #315C43;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .guide-header p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+        }
+
+        .tip-card .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .tip-card h2 {
+            color: #315C43;
+            margin-bottom: 10px;
+        }
+
+        .tip-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 800px) {
+
+            .tips-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-header h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 
 <body>
 
+<header>
 
-<header class="header">
-
-    <div class="logo">
-
-        🌾
-
-        <span data-i18n="siteTitle">
-            Farmer Crop Guide
-        </span>
-
-    </div>
-
+    <h2>🌾 Farmer Crop Guide</h2>
 
     <nav>
 
-        <a href="index.html"
-           data-i18n="home">
+        <a href="index.html" data-i18n="home">
             Home
         </a>
 
-        <a href="crop-guide.html"
-           data-i18n="cropGuide">
+        <a href="crop-guide.html" data-i18n="cropGuide">
             Crop Guide
         </a>
 
-        <a href="soil-guide.html"
-           data-i18n="soilGuide">
+        <a href="soil-guide.html" data-i18n="soilGuide">
             Soil Guide
         </a>
 
-        <a href="tips.html"
-           data-i18n="tips">
+        <a href="tips.html" data-i18n="tips">
             Farming Tips
         </a>
 
     </nav>
 
 
-    <div class="language-box">
+    <label>
 
-        <label
-            for="languageSelect"
-            data-i18n="language"
-        >
+        <span data-i18n="language">
             Language
-        </label>
+        </span>
 
-        <select id="languageSelect">
+        <select id="pageLanguage">
 
-            <option value="en">
-                English
-            </option>
+            <option value="en">English</option>
 
-            <option value="te">
-                తెలుగు
-            </option>
+            <option value="te">తెలుగు</option>
 
-            <option value="hi">
-                हिन्दी
-            </option>
+            <option value="hi">हिन्दी</option>
 
         </select>
 
-    </div>
+    </label>
 
 </header>
 
 
-
-<section class="page-header">
-
-    <h1 data-i18n="farmingTips">
-        Farming Tips
-    </h1>
-
-</section>
+<main class="guide-page">
 
 
+    <div class="guide-header">
 
-<section class="tips-section">
+        <h1 data-i18n="tipsTitle">
+            🌾 Farming Tips
+        </h1>
 
-    <div
-        id="tipsContainer"
-        class="tips-container"
-    ></div>
+        <p data-i18n="tipsSubtitle">
+            Simple practices that can help farmers manage crops effectively.
+        </p>
 
-</section>
-
+    </div>
 
 
-<script src="script.js"></script>
+    <div class="tips-grid">
+
+
+        <div class="tip-card">
+
+            <div class="icon">💧</div>
+
+            <h2 data-i18n="waterTitle">
+                Water Management
+            </h2>
+
+            <p data-i18n="waterText">
+                Provide water according to the crop requirement. Avoid over-irrigation and reduce unnecessary water usage.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="icon">🌱</div>
+
+            <h2 data-i18n="soilTitle">
+                Soil Care
+            </h2>
+
+            <p data-i18n="soilText">
+                Maintain soil fertility by using suitable organic matter and nutrients according to soil conditions.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="icon">🔄</div>
+
+            <h2 data-i18n="rotationTitle">
+                Crop Rotation
+            </h2>
+
+            <p data-i18n="rotationText">
+                Rotate crops across seasons to support soil health and reduce repeated pressure from pests and diseases.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="icon">🌾</div>
+
+            <h2 data-i18n="seedTitle">
+                Quality Seeds
+            </h2>
+
+            <p data-i18n="seedText">
+                Use good-quality seeds that are suitable for the local season, soil and farming conditions.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="icon">🐛</div>
+
+            <h2 data-i18n="pestTitle">
+                Pest Monitoring
+            </h2>
+
+            <p data-i18n="pestText">
+                Regularly observe crops for pests and diseases and take suitable preventive measures when required.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="icon">📅</div>
+
+            <h2 data-i18n="timingTitle">
+                Proper Timing
+            </h2>
+
+            <p data-i18n="timingText">
+                Follow suitable sowing, irrigation and harvesting timings according to the selected crop.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<script>
+
+const translations = {
+
+    en: {
+
+        home: "Home",
+        cropGuide: "Crop Guide",
+        soilGuide: "Soil Guide",
+        tips: "Farming Tips",
+        language: "Language",
+
+        tipsTitle: "🌾 Farming Tips",
+        tipsSubtitle: "Simple practices that can help farmers manage crops effectively.",
+
+        waterTitle: "Water Management",
+        soilTitle: "Soil Care",
+        rotationTitle: "Crop Rotation",
+        seedTitle: "Quality Seeds",
+        pestTitle: "Pest Monitoring",
+        timingTitle: "Proper Timing",
+
+        waterText: "Provide water according to the crop requirement. Avoid over-irrigation and reduce unnecessary water usage.",
+        soilText: "Maintain soil fertility by using suitable organic matter and nutrients according to soil conditions.",
+        rotationText: "Rotate crops across seasons to support soil health and reduce repeated pressure from pests and diseases.",
+        seedText: "Use good-quality seeds that are suitable for the local season, soil and farming conditions.",
+        pestText: "Regularly observe crops for pests and diseases and take suitable preventive measures when required.",
+        timingText: "Follow suitable sowing, irrigation and harvesting timings according to the selected crop."
+    },
+
+
+    te: {
+
+        home: "హోమ్",
+        cropGuide: "పంటల గైడ్",
+        soilGuide: "నేల గైడ్",
+        tips: "వ్యవసాయ సూచనలు",
+        language: "భాష",
+
+        tipsTitle: "🌾 వ్యవసాయ సూచనలు",
+        tipsSubtitle: "పంటలను సమర్థవంతంగా నిర్వహించడానికి ఉపయోగపడే సులభమైన సూచనలు.",
+
+        waterTitle: "నీటి నిర్వహణ",
+        soilTitle: "నేల సంరక్షణ",
+        rotationTitle: "పంట మార్పిడి",
+        seedTitle: "నాణ్యమైన విత్తనాలు",
+        pestTitle: "చీడపీడల పర్యవేక్షణ",
+        timingTitle: "సరైన సమయం",
+
+        waterText: "పంట అవసరానికి అనుగుణంగా నీటిని అందించండి. అధిక నీటిపారుదలని నివారించి అవసరం లేని నీటి వినియోగాన్ని తగ్గించండి.",
+        soilText: "నేల పరిస్థితులకు అనుగుణంగా సేంద్రియ పదార్థాలు మరియు పోషకాలను ఉపయోగించి నేల సారాన్ని కాపాడండి.",
+        rotationText: "నేల ఆరోగ్యాన్ని మెరుగుపరచడానికి మరియు చీడపీడల సమస్యలను తగ్గించడానికి వివిధ సీజన్లలో పంటలను మార్చి సాగు చేయండి.",
+        seedText: "స్థానిక సీజన్, నేల మరియు వ్యవసాయ పరిస్థితులకు అనుకూలమైన నాణ్యమైన విత్తనాలను ఉపయోగించండి.",
+        pestText: "పంటలను క్రమం తప్పకుండా పరిశీలించి చీడపీడలు లేదా వ్యాధులు కనిపిస్తే తగిన నివారణ చర్యలు తీసుకోండి.",
+        timingText: "ఎంచుకున్న పంటకు అనుగుణంగా విత్తడం, నీటిపారుదల మరియు కోత సమయాలను పాటించండి."
+    },
+
+
+    hi: {
+
+        home: "होम",
+        cropGuide: "फसल गाइड",
+        soilGuide: "मिट्टी गाइड",
+        tips: "कृषि सुझाव",
+        language: "भाषा",
+
+        tipsTitle: "🌾 कृषि सुझाव",
+        tipsSubtitle: "फसलों को प्रभावी ढंग से प्रबंधित करने के लिए सरल सुझाव।",
+
+        waterTitle: "जल प्रबंधन",
+        soilTitle: "मिट्टी की देखभाल",
+        rotationTitle: "फसल चक्र",
+        seedTitle: "गुणवत्तापूर्ण बीज",
+        pestTitle: "कीट निगरानी",
+        timingTitle: "सही समय",
+
+        waterText: "फसल की आवश्यकता के अनुसार पानी दें। अधिक सिंचाई से बचें और अनावश्यक पानी का उपयोग कम करें।",
+        soilText: "मिट्टी की स्थिति के अनुसार उचित जैविक पदार्थ और पोषक तत्वों का उपयोग करके मिट्टी की उर्वरता बनाए रखें।",
+        rotationText: "मिट्टी के स्वास्थ्य को बनाए रखने और कीटों तथा रोगों की समस्या को कम करने के लिए अलग-अलग मौसम में फसलें बदलकर उगाएं।",
+        seedText: "स्थानीय मौसम, मिट्टी और खेती की परिस्थितियों के अनुसार अच्छी गुणवत्ता वाले बीजों का उपयोग करें।",
+        pestText: "फसलों की नियमित निगरानी करें और कीट या रोग दिखाई देने पर उचित रोकथाम के उपाय करें।",
+        timingText: "चुनी गई फसल के अनुसार बुवाई, सिंचाई और कटाई का सही समय अपनाएं।"
+    }
+
+};
+
+
+function changeLanguage(lang) {
+
+    localStorage.setItem("farmerLanguage", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if (translations[lang][key]) {
+
+            element.textContent =
+                translations[lang][key];
+
+        }
+
+    });
+
+}
+
+
+const languageSelect =
+    document.getElementById("pageLanguage");
+
+
+const savedLanguage =
+    localStorage.getItem("farmerLanguage") || "en";
+
+
+languageSelect.value = savedLanguage;
+
+changeLanguage(savedLanguage);
+
+
+languageSelect.addEventListener(
+    "change",
+    function () {
+
+        changeLanguage(this.value);
+
+    }
+);
+
+</script>
 
 </body>
 

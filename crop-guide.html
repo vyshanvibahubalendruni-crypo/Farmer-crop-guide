@@ -1,214 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Crop Guide</title>
 
     <link rel="stylesheet" href="style.css">
 
-</head>
+    <style>
+        .guide-page {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
+        .guide-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .guide-header h1 {
+            color: #315C43;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .guide-header p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .guide-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+        }
+
+        .guide-card h2 {
+            color: #315C43;
+            margin-bottom: 12px;
+        }
+
+        .guide-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .guide-card ul {
+            padding-left: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        @media (max-width: 800px) {
+            .guide-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
-
-<header class="header">
-
-    <div class="logo">
-
-        🌾
-
-        <span data-i18n="siteTitle">
-            Farmer Crop Guide
-        </span>
-
-    </div>
-
+<header>
+    <h2>🌾 Farmer Crop Guide</h2>
 
     <nav>
-
-        <a href="index.html"
-           data-i18n="home">
-            Home
-        </a>
-
-        <a href="crop-guide.html"
-           data-i18n="cropGuide">
-            Crop Guide
-        </a>
-
-        <a href="soil-guide.html"
-           data-i18n="soilGuide">
-            Soil Guide
-        </a>
-
-        <a href="tips.html"
-           data-i18n="tips">
-            Farming Tips
-        </a>
-
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="crop-guide.html" data-i18n="cropGuide">Crop Guide</a>
+        <a href="soil-guide.html" data-i18n="soilGuide">Soil Guide</a>
+        <a href="tips.html" data-i18n="tips">Farming Tips</a>
     </nav>
 
+    <label>
+        <span data-i18n="language">Language</span>
 
-    <div class="language-box">
-
-        <label
-            data-i18n="language"
-            for="languageSelect"
-        >
-            Language
-        </label>
-
-        <select id="languageSelect">
-
-            <option value="en">
-                English
-            </option>
-
-            <option value="te">
-                తెలుగు
-            </option>
-
-            <option value="hi">
-                हिन्दी
-            </option>
-
+        <select id="pageLanguage">
+            <option value="en">English</option>
+            <option value="te">తెలుగు</option>
+            <option value="hi">हिन्दी</option>
         </select>
-
-    </div>
-
+    </label>
 </header>
 
 
+<main class="guide-page">
 
-<section class="page-header">
+    <div class="guide-header">
+        <h1 data-i18n="cropGuideTitle">🌱 Crop Guide</h1>
 
-    <h1 data-i18n="cropGuide">
-        Crop Guide
-    </h1>
-
-</section>
-
-
-
-<section class="all-crops">
-
-    <div
-        id="results"
-        class="results"
-    ></div>
-
-</section>
+        <p data-i18n="cropGuideSubtitle">
+            Learn about common crops and their basic growing requirements.
+        </p>
+    </div>
 
 
+    <div class="guide-grid">
 
-<script src="script.js"></script>
+        <div class="guide-card">
+            <h2>🌾 <span data-i18n="cotton">Cotton</span></h2>
+
+            <p data-i18n="cottonText">
+                Cotton is mainly grown during the Kharif season. It grows well in black soil and requires medium water availability.
+            </p>
+
+            <ul>
+                <li data-i18n="kharif">Kharif Season</li>
+                <li data-i18n="blackSoil">Black Soil</li>
+                <li data-i18n="mediumWater">Medium Water</li>
+                <li>150–180 days</li>
+            </ul>
+        </div>
+
+
+        <div class="guide-card">
+            <h2>🌱 <span data-i18n="soybean">Soybean</span></h2>
+
+            <p data-i18n="soybeanText">
+                Soybean is a Kharif crop that grows well in black soil with medium water availability.
+            </p>
+
+            <ul>
+                <li data-i18n="kharif">Kharif Season</li>
+                <li data-i18n="blackSoil">Black Soil</li>
+                <li data-i18n="mediumWater">Medium Water</li>
+                <li>90–120 days</li>
+            </ul>
+        </div>
+
+
+        <div class="guide-card">
+            <h2>🥜 <span data-i18n="groundnut">Groundnut</span></h2>
+
+            <p data-i18n="groundnutText">
+                Groundnut is suitable for Kharif conditions and grows well in red soil with medium water.
+            </p>
+
+            <ul>
+                <li data-i18n="kharif">Kharif Season</li>
+                <li data-i18n="redSoil">Red Soil</li>
+                <li data-i18n="mediumWater">Medium Water</li>
+                <li>100–120 days</li>
+            </ul>
+        </div>
+
+
+        <div class="guide-card">
+            <h2>🌾 <span data-i18n="rice">Rice</span></h2>
+
+            <p data-i18n="riceText">
+                Rice is a major Kharif crop that grows well in clay soil and requires high water availability.
+            </p>
+
+            <ul>
+                <li data-i18n="kharif">Kharif Season</li>
+                <li data-i18n="claySoil">Clay Soil</li>
+                <li data-i18n="highWater">High Water</li>
+                <li>120–150 days</li>
+            </ul>
+        </div>
+
+
+        <div class="guide-card">
+            <h2>🌽 <span data-i18n="maize">Maize</span></h2>
+
+            <p data-i18n="maizeText">
+                Maize can be grown during the Kharif season and prefers loamy soil with medium water.
+            </p>
+
+            <ul>
+                <li data-i18n="kharif">Kharif Season</li>
+                <li data-i18n="loamySoil">Loamy Soil</li>
+                <li data-i18n="mediumWater">Medium Water</li>
+                <li>90–120 days</li>
+            </ul>
+        </div>
+
+
+        <div class="guide-card">
+            <h2>🌾 <span data-i18n="wheat">Wheat</span></h2>
+
+            <p data-i18n="wheatText">
+                Wheat is mainly grown during the Rabi season and grows well in loamy soil with medium water.
+            </p>
+
+            <ul>
+                <li data-i18n="rabi">Rabi Season</li>
+                <li data-i18n="loamySoil">Loamy Soil</li>
+                <li data-i18n="mediumWater">Medium Water</li>
+                <li>120–150 days</li>
+            </ul>
+        </div>
+
+    </div>
+
+</main>
 
 
 <script>
+const cropTranslations = {
 
-document.addEventListener(
-    "DOMContentLoaded",
-    async function () {
+    en: {
+        home: "Home",
+        cropGuide: "Crop Guide",
+        soilGuide: "Soil Guide",
+        tips: "Farming Tips",
+        language: "Language",
 
-        const results =
-            document.getElementById("results");
+        cropGuideTitle: "🌱 Crop Guide",
+        cropGuideSubtitle: "Learn about common crops and their basic growing requirements.",
 
-        try {
+        cotton: "Cotton",
+        soybean: "Soybean",
+        groundnut: "Groundnut",
+        rice: "Rice",
+        maize: "Maize",
+        wheat: "Wheat",
 
-            const response =
-                await fetch(
-                    "http://localhost:3000/api/crops"
-                );
+        kharif: "Kharif Season",
+        rabi: "Rabi Season",
+        blackSoil: "Black Soil",
+        redSoil: "Red Soil",
+        claySoil: "Clay Soil",
+        loamySoil: "Loamy Soil",
+        mediumWater: "Medium Water",
+        highWater: "High Water",
 
-            const crops =
-                await response.json();
+        cottonText: "Cotton is mainly grown during the Kharif season. It grows well in black soil and requires medium water availability.",
+        soybeanText: "Soybean is a Kharif crop that grows well in black soil with medium water availability.",
+        groundnutText: "Groundnut is suitable for Kharif conditions and grows well in red soil with medium water.",
+        riceText: "Rice is a major Kharif crop that grows well in clay soil and requires high water availability.",
+        maizeText: "Maize can be grown during the Kharif season and prefers loamy soil with medium water.",
+        wheatText: "Wheat is mainly grown during the Rabi season and grows well in loamy soil with medium water."
+    },
 
-            const language =
-                getLanguage();
+    te: {
+        home: "హోమ్",
+        cropGuide: "పంటల గైడ్",
+        soilGuide: "నేల గైడ్",
+        tips: "వ్యవసాయ సూచనలు",
+        language: "భాష",
 
-            const data =
-                translations[language];
+        cropGuideTitle: "🌱 పంటల గైడ్",
+        cropGuideSubtitle: "ప్రధాన పంటలు మరియు వాటి సాగు అవసరాల గురించి తెలుసుకోండి.",
 
-            results.innerHTML = "";
+        cotton: "పత్తి",
+        soybean: "సోయాబీన్",
+        groundnut: "వేరుశనగ",
+        rice: "వరి",
+        maize: "మొక్కజొన్న",
+        wheat: "గోధుమ",
 
+        kharif: "ఖరీఫ్ సీజన్",
+        rabi: "రబీ సీజన్",
+        blackSoil: "నల్ల నేల",
+        redSoil: "ఎర్ర నేల",
+        claySoil: "బంకమట్టి నేల",
+        loamySoil: "లోమీ నేల",
+        mediumWater: "మధ్యస్థ నీరు",
+        highWater: "అధిక నీరు",
 
-            crops.forEach(crop => {
+        cottonText: "పత్తిని ప్రధానంగా ఖరీఫ్ సీజన్‌లో సాగు చేస్తారు. ఇది నల్ల నేలలో బాగా పెరుగుతుంది మరియు మధ్యస్థ నీరు అవసరం.",
+        soybeanText: "సోయాబీన్ ఖరీఫ్ పంట. ఇది నల్ల నేలలో మధ్యస్థ నీటితో బాగా పెరుగుతుంది.",
+        groundnutText: "వేరుశనగ ఖరీఫ్ పరిస్థితులకు అనుకూలంగా ఉంటుంది. ఇది ఎర్ర నేలలో మధ్యస్థ నీటితో బాగా పెరుగుతుంది.",
+        riceText: "వరి ముఖ్యమైన ఖరీఫ్ పంట. ఇది బంకమట్టి నేలలో బాగా పెరుగుతుంది మరియు అధిక నీరు అవసరం.",
+        maizeText: "మొక్కజొన్నను ఖరీఫ్ సీజన్‌లో సాగు చేయవచ్చు. ఇది లోమీ నేలలో మధ్యస్థ నీటితో బాగా పెరుగుతుంది.",
+        wheatText: "గోధుమలను ప్రధానంగా రబీ సీజన్‌లో సాగు చేస్తారు. ఇది లోమీ నేలలో మధ్యస్థ నీటితో బాగా పెరుగుతుంది."
+    },
 
-                const translated =
-                    translateCrop(crop);
+    hi: {
+        home: "होम",
+        cropGuide: "फसल गाइड",
+        soilGuide: "मिट्टी गाइड",
+        tips: "कृषि सुझाव",
+        language: "भाषा",
 
+        cropGuideTitle: "🌱 फसल गाइड",
+        cropGuideSubtitle: "प्रमुख फसलों और उनकी खेती की आवश्यकताओं के बारे में जानें।",
 
-                const card =
-                    document.createElement("div");
+        cotton: "कपास",
+        soybean: "सोयाबीन",
+        groundnut: "मूंगफली",
+        rice: "धान",
+        maize: "मक्का",
+        wheat: "गेहूँ",
 
-                card.className =
-                    "crop-card";
+        kharif: "खरीफ मौसम",
+        rabi: "रबी मौसम",
+        blackSoil: "काली मिट्टी",
+        redSoil: "लाल मिट्टी",
+        claySoil: "चिकनी मिट्टी",
+        loamySoil: "दोमट मिट्टी",
+        mediumWater: "मध्यम पानी",
+        highWater: "अधिक पानी",
 
-
-                card.innerHTML = `
-
-                    <div
-                        class="crop-image"
-                        style="
-                            background-image:
-                            linear-gradient(
-                                rgba(0,0,0,0.45),
-                                rgba(0,0,0,0.45)
-                            ),
-                            url('${crop.image}');
-                        "
-                    >
-
-                        <div class="crop-card-content">
-
-                            <h3>
-                                ${translated.displayName}
-                            </h3>
-
-                            <p>
-                                ${translated.displayDescription}
-                            </p>
-
-                            <button
-                                onclick="showCropDetails('${crop.name}')"
-                            >
-                                ${data.learnMore}
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                `;
-
-
-                results.appendChild(card);
-
-            });
-
-        }
-
-        catch (error) {
-
-            console.error(error);
-
-        }
-
+        cottonText: "कपास मुख्य रूप से खरीफ मौसम में उगाई जाती है। यह काली मिट्टी में अच्छी तरह बढ़ती है और मध्यम पानी की आवश्यकता होती है।",
+        soybeanText: "सोयाबीन खरीफ की फसल है। यह काली मिट्टी में मध्यम पानी के साथ अच्छी तरह बढ़ती है।",
+        groundnutText: "मूंगफली खरीफ की परिस्थितियों के लिए उपयुक्त है। यह लाल मिट्टी में मध्यम पानी के साथ अच्छी तरह बढ़ती है।",
+        riceText: "धान एक प्रमुख खरीफ फसल है। यह चिकनी मिट्टी में अच्छी तरह बढ़ती है और अधिक पानी की आवश्यकता होती है।",
+        maizeText: "मक्का खरीफ मौसम में उगाया जा सकता है। यह दोमट मिट्टी में मध्यम पानी के साथ अच्छी तरह बढ़ता है।",
+        wheatText: "गेहूँ मुख्य रूप से रबी मौसम में उगाया जाता है। यह दोमट मिट्टी में मध्यम पानी के साथ अच्छी तरह बढ़ता है।"
     }
+};
 
-);
 
+function changeLanguage(lang) {
+
+    localStorage.setItem("farmerLanguage", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if (cropTranslations[lang][key]) {
+            element.textContent = cropTranslations[lang][key];
+        }
+
+    });
+}
+
+
+const languageSelect = document.getElementById("pageLanguage");
+
+const savedLanguage =
+    localStorage.getItem("farmerLanguage") || "en";
+
+languageSelect.value = savedLanguage;
+
+changeLanguage(savedLanguage);
+
+languageSelect.addEventListener("change", function () {
+    changeLanguage(this.value);
+});
 </script>
 
 </body>
-
 </html>
